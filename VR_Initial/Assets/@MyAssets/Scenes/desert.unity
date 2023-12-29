@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -924,7 +924,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29904
+  m_Name: pb_Mesh53068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1115,16 +1115,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 162629256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 131bdfd2cfc77c8419851612f2417602, type: 3}
+  m_Script: {fileID: 11500000, guid: 2650fd9394d6e2f49aa81267951ebed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
   maxReflectionCount: 5
-  maxStepDistance: 20
+  maxStepDistance: 200
 --- !u!135 &162629258
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1345,12 +1340,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 162629256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcbf2157b354f294a8f1f401a87f8e71, type: 3}
+  m_Script: {fileID: 11500000, guid: 3457205218d4f8f44a4beee95d0f47ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 1, z: 0}
   speed: 10
-  trans: {fileID: 0}
 --- !u!114 &162629266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2041,8 +2035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee25924eadf16a48a4a3dedc317e03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BluePos: {fileID: 0}
-  OrangePos: {fileID: 0}
 --- !u!54 &355425021
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2663,8 +2655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee25924eadf16a48a4a3dedc317e03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BluePos: {fileID: 0}
-  OrangePos: {fileID: 0}
 --- !u!1 &577137826
 GameObject:
   m_ObjectHideFlags: 0
