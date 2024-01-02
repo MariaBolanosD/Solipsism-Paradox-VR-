@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/@MyAssets/Scenes/desert.unity
-    guid: b44657bfefebeba44b0006671e9cc594
+    guid: 05b26bbf1628d4d45a0aa30793d2ba37
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c652e3d0b0a261b478ef27fe465ef974,
       type: 2}
