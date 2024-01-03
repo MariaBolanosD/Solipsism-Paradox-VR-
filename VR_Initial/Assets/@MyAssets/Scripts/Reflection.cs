@@ -8,22 +8,19 @@ public class Reflection : MonoBehaviour
 
     public int maxReflectionCount = 5;
     public float maxStepDistance = 200;
-
+    public GameObject blue;
+    public GameObject orange;
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<LineRenderer>().SetVertexCount(maxReflectionCount+1);
+        GetComponent<LineRenderer>().positionCount = (maxReflectionCount+1);
     }
 
     // Update is called once per frame
     void Update()
-    {
-
-        //Handles.color = Color.red;
-        //Handles.ArrowHandleCap(0, this.transform.position + this.transform.forward * 0.25f, this.transform.rotation, 0.5f, EventType.Repaint);
-        //Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(this.transform.position, 0.25f);
-
+    {        
+        //blue.GetComponent<Portalrefle>().enabled = false;
+        //orange.GetComponent<ReflectionPortal>().enabled = false;
         DrawPredictedReflectionPattern(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
     }
 
@@ -35,25 +32,54 @@ public class Reflection : MonoBehaviour
         }
 
         Vector3 startingPosition = position;
+        
 
         Ray ray = new Ray(position, direction);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, maxStepDistance))
         {
-            direction = Vector3.Reflect(direction, hit.normal);
-            position = hit.point;
+            if (hit.collider.CompareTag("OrangePortal"))
+            {
+                direction = Vector3.Reflect(direction, hit.normal);
+                // change position to go out of blue portal
+                Vector3 organgepos = hit.point;
+
+                Vector3 organge = hit.collider.transform.position;
+                position = hit.point;
+                int i = (5 - reflectionsRemaining);
+                DrawLine(startingPosition, position, i++);
+                for(; i < 5; i++)
+                {
+                    DrawLine(position, position, i);
+                }
+                DrawPredictedReflectionPattern(position, direction, reflectionsRemaining - 1);
+                blue.GetComponent<Portalrefle>().DrawPredictedReflectionPattern1(blue.transform.position + blue.transform.forward * 1.0f, direction, 5);
+                //blue.GetComponent<Reflection>().DrawPredictedReflectionPattern(blue.transform.position, -direction,5);
+            }
+            else if(hit.collider.CompareTag("BluePortal"))
+            {
+                direction = Vector3.Reflect(direction, hit.normal);
+                // change position to go out of orange portal
+                position = hit.point;
+            }
+            else
+            {
+                direction = Vector3.Reflect(direction, hit.normal);
+                position = hit.point;
+                // Gizmos.color = Color.yellow;
+                //Gizmos.DrawLine(startingPosition, position);
+                int i = (5 - reflectionsRemaining);
+                DrawLine(startingPosition, position, i);
+
+                DrawPredictedReflectionPattern(position, direction, reflectionsRemaining - 1);
+            }
         }
         else
         {
             position += direction * maxStepDistance;
         }
 
-       // Gizmos.color = Color.yellow;
-        //Gizmos.DrawLine(startingPosition, position);
-        int i = (5 - reflectionsRemaining);
-        DrawLine(startingPosition, position, i);
-
-        DrawPredictedReflectionPattern(position, direction, reflectionsRemaining - 1);
+       
     }
     // Apply these values in the editor
 
