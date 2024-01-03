@@ -59,8 +59,8 @@ public class Reflection1 : MonoBehaviour
         line.endColor = Color.red;
 
         // set width of the renderer
-        line.startWidth = 0.3f;
-        line.endWidth = 0.3f;
+        line.startWidth = 0.15f;
+        line.endWidth = 0.15f;
 
         // set the position
         line.SetPosition(indx, pos0);

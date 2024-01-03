@@ -12,13 +12,13 @@ public class Portalrefle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<LineRenderer>().positionCount = (maxReflectionCount + 1);
+        this.GetComponent<LineRenderer>().positionCount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        DrawPredictedReflectionPattern1( Vector3.zero,Vector3.zero, maxReflectionCount);
+        
     }
 
     public void DrawPredictedReflectionPattern1(Vector3 position, Vector3 direction, int reflectionsRemaining)
@@ -37,8 +37,6 @@ public class Portalrefle : MonoBehaviour
         {
             direction = Vector3.Reflect(direction, hit.normal);
             position = hit.point;
-            // Gizmos.color = Color.yellow;
-            //Gizmos.DrawLine(startingPosition, position);
             int i = (5 - reflectionsRemaining);
             DrawLine1(startingPosition, position, i);
             DrawPredictedReflectionPattern1(position, direction, reflectionsRemaining - 1);
@@ -56,13 +54,10 @@ public class Portalrefle : MonoBehaviour
     void DrawLine1(Vector3 pos0, Vector3 pos1, int indx)
     {
         LineRenderer line = this.GetComponent<LineRenderer>();
-        // set the color of the line
-        line.startColor = Color.red;
-        line.endColor = Color.red;
 
         // set width of the renderer
-        line.startWidth = 0.3f;
-        line.endWidth = 0.3f;
+        line.startWidth = 0.15f;
+        line.endWidth = 0.15f;
 
         // set the position
         line.SetPosition(indx, pos0);
