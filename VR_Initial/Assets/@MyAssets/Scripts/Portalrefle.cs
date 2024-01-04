@@ -18,7 +18,6 @@ public class Portalrefle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void DrawPredictedReflectionPattern1(Vector3 position, Vector3 direction, int reflectionsRemaining)

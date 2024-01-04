@@ -10,6 +10,7 @@ public class Reflection : MonoBehaviour
     public float maxStepDistance = 200;
     public GameObject blue;
     public GameObject orange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +53,6 @@ public class Reflection : MonoBehaviour
                 {
                     DrawLine(position, position, i);
                 }
-                //DrawPredictedReflectionPattern(position, direction, reflectionsRemaining - 1);
 
                 blue.GetComponent<LineRenderer>().positionCount = maxReflectionCount+1;
                 blue.GetComponent<Portalrefle>().DrawPredictedReflectionPattern1(blue.transform.position + blue.transform.forward * 1.0f, direction, 5);
@@ -71,10 +71,40 @@ public class Reflection : MonoBehaviour
                 {
                     DrawLine(position, position, i);
                 }
-                //DrawPredictedReflectionPattern(position, direction, reflectionsRemaining - 1);
 
                 orange.GetComponent<LineRenderer>().positionCount = maxReflectionCount + 1;
                 orange.GetComponent<Portalrefle>().DrawPredictedReflectionPattern1(orange.transform.position + orange.transform.forward * 1.0f, direction, 5);
+            }
+            else if(hit.collider.CompareTag("Lampara") == true)
+            {
+                // ha colisionado con una lampara
+                if(hit.collider.GetComponent<ColoresLampara>().GetColor() == this.GetComponent<ColoresLampara>().GetColor())
+                {
+                    // los colores son los mismos
+                    hit.transform.SendMessage("HitByRay");
+
+                    direction = hit.transform.forward;
+                    position = hit.point;
+                    // Gizmos.color = Color.yellow;
+                    //Gizmos.DrawLine(startingPosition, position);
+                    int i = (5 - reflectionsRemaining);
+                    DrawLine(startingPosition, position, i);
+
+                    DrawPredictedReflectionPattern(position, direction, reflectionsRemaining - 1);
+                }
+                else
+                {
+                    direction = Vector3.Reflect(direction, hit.normal);
+                    position = hit.point;
+                    // Gizmos.color = Color.yellow;
+                    //Gizmos.DrawLine(startingPosition, position);
+                    int i = (5 - reflectionsRemaining);
+                    DrawLine(startingPosition, position, i++);
+                    for (; i < 5; i++)
+                    {
+                        DrawLine(position, position, i);
+                    }
+                }
             }
             else
             {

@@ -17,13 +17,18 @@ public class ColoresLampara : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+    }
+
+    void HitByRay()
+    {
+        Debug.Log("I was hit by a Ray");
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        
+
     }
 
     public Color GetColor()
