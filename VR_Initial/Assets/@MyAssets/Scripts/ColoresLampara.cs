@@ -11,12 +11,13 @@ public class ColoresLampara : MonoBehaviour
         azul,
         amarillo
     };
-
+    bool mActivated;
 
     public Color color;
     // Start is called before the first frame update
     void Start()
     {
+        mActivated = false;
     }
 
     void HitByRay()
@@ -35,7 +36,15 @@ public class ColoresLampara : MonoBehaviour
     {
         return color;
     }
-    
 
+    public bool GetActivated()
+    {
+        return mActivated;
+    }
 
+    void ActivatedLampara()
+    {
+        Debug.Log("ActivatedLampara");
+        mActivated = true;
+    }
 }

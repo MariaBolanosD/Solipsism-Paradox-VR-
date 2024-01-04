@@ -10,10 +10,12 @@ public class Reflection : MonoBehaviour
     public float maxStepDistance = 200;
     public GameObject blue;
     public GameObject orange;
+    bool lampara;
 
     // Start is called before the first frame update
     void Start()
     {
+        lampara = false;
         GetComponent<LineRenderer>().positionCount = (maxReflectionCount+1);
     }
 
@@ -22,6 +24,7 @@ public class Reflection : MonoBehaviour
     {
         blue.GetComponent<LineRenderer>().positionCount = 0;
         orange.GetComponent<LineRenderer>().positionCount = 0;
+        lampara = false;
         DrawPredictedReflectionPattern(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
     }
 
@@ -49,15 +52,15 @@ public class Reflection : MonoBehaviour
                 position = hit.point;
                 int i = (5 - reflectionsRemaining);
                 DrawLine(startingPosition, position, i++);
-                for(; i < 5; i++)
+                for (; i < 5; i++)
                 {
                     DrawLine(position, position, i);
                 }
 
-                blue.GetComponent<LineRenderer>().positionCount = maxReflectionCount+1;
+                blue.GetComponent<LineRenderer>().positionCount = maxReflectionCount + 1;
                 blue.GetComponent<Portalrefle>().DrawPredictedReflectionPattern1(blue.transform.position + blue.transform.forward * 1.0f, direction, 5);
             }
-            else if(hit.collider.CompareTag("BluePortal") == true)
+            else if (hit.collider.CompareTag("BluePortal") == true)
             {
                 direction = Vector3.Reflect(direction, hit.normal);
                 // change position to go out of blue portal
@@ -75,18 +78,16 @@ public class Reflection : MonoBehaviour
                 orange.GetComponent<LineRenderer>().positionCount = maxReflectionCount + 1;
                 orange.GetComponent<Portalrefle>().DrawPredictedReflectionPattern1(orange.transform.position + orange.transform.forward * 1.0f, direction, 5);
             }
-            else if(hit.collider.CompareTag("Lampara") == true)
+            else if (hit.collider.CompareTag("Lampara") == true)
             {
                 // ha colisionado con una lampara
-                if(hit.collider.GetComponent<ColoresLampara>().GetColor() == this.GetComponent<ColoresLampara>().GetColor())
+                if (hit.collider.GetComponent<ColoresLampara>().GetColor() == this.GetComponent<ColoresLampara>().GetColor())
                 {
                     // los colores son los mismos
-                    hit.transform.SendMessage("HitByRay");
-
+                    hit.transform.SendMessage("ActivatedLampara");
+                    lampara = true;
                     direction = hit.transform.forward;
                     position = hit.point;
-                    // Gizmos.color = Color.yellow;
-                    //Gizmos.DrawLine(startingPosition, position);
                     int i = (5 - reflectionsRemaining);
                     DrawLine(startingPosition, position, i);
 
@@ -96,8 +97,6 @@ public class Reflection : MonoBehaviour
                 {
                     direction = Vector3.Reflect(direction, hit.normal);
                     position = hit.point;
-                    // Gizmos.color = Color.yellow;
-                    //Gizmos.DrawLine(startingPosition, position);
                     int i = (5 - reflectionsRemaining);
                     DrawLine(startingPosition, position, i++);
                     for (; i < 5; i++)
@@ -106,12 +105,18 @@ public class Reflection : MonoBehaviour
                     }
                 }
             }
+            else if (hit.collider.CompareTag("Target") == true)
+            {
+                if (lampara)
+                {
+                    hit.transform.SendMessage("Activated");
+                }
+
+            }
             else
             {
                 direction = Vector3.Reflect(direction, hit.normal);
                 position = hit.point;
-                // Gizmos.color = Color.yellow;
-                //Gizmos.DrawLine(startingPosition, position);
                 int i = (5 - reflectionsRemaining);
                 DrawLine(startingPosition, position, i);
 
