@@ -2893,6 +2893,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Component_GetComponentsForListInternal_m
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* GameObject_get_tag_mEDD27BF795072834D656B286CBE51B2C99747805 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.GameObject::CompareTag(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool GameObject_CompareTag_m6378BE50D009A93D46036F74CC3F7E2ECB0636E5 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, String_t* ___tag0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Component::SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Component_SendMessage_m7CD6568BD5D93384C683CFF1E5088D17F20F3459 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, String_t* ___methodName0, RuntimeObject* ___value1, int32_t ___options2, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Object::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m2149FA40CEC8D82AC20D3508AB40C0D8EFEF68E6 (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C* __this, const RuntimeMethod* method) ;
 // System.Void System.Collections.Generic.List`1<UnityEngine.UnitySynchronizationContext/WorkRequest>::.ctor(System.Int32)
@@ -5359,6 +5361,15 @@ IL_0010:
 	{
 		bool L_3 = V_0;
 		return L_3;
+	}
+}
+// System.Void UnityEngine.Component::SendMessage(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Component_SendMessage_mB1BCD3D07E4CF35877A56FE404902FCC83A3EB46 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, String_t* ___methodName0, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___methodName0;
+		Component_SendMessage_m7CD6568BD5D93384C683CFF1E5088D17F20F3459(__this, L_0, NULL, 0, NULL);
+		return;
 	}
 }
 // System.Void UnityEngine.Component::SendMessage(System.String,System.Object,UnityEngine.SendMessageOptions)
