@@ -11,15 +11,14 @@ public class PortalManager : MonoBehaviour
     {
         if(other.CompareTag("BluePortal"))
         {
-            if (GetComponent<CharacterController>() == true)
+            if (this.gameObject.GetComponent<CharacterController>() == true)
             {
                 CharacterController cc = GetComponent<CharacterController>();
 
                 cc.enabled = false;
                 transform.position = OrangePos.transform.position;
-                transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-                this.GetComponent<CharacterController>().attachedRigidbody.velocity = cc.velocity;
-
+                Quaternion rotation = Quaternion.Euler(0, this.transform.rotation.y-90, 0);
+                transform.rotation = rotation;
                 cc.enabled = true;
             }
             else
@@ -27,7 +26,7 @@ public class PortalManager : MonoBehaviour
                 Rigidbody rb = GetComponent<Rigidbody>();
                 rb.Sleep();
                 transform.position = OrangePos.transform.position;
-                transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+                transform.rotation = OrangePos.transform.rotation;
                 this.GetComponent<Rigidbody>().velocity = rb.velocity;
 
                 rb.WakeUp();
@@ -36,15 +35,14 @@ public class PortalManager : MonoBehaviour
 
         if (other.CompareTag("OrangePortal"))
         {
-            if (GetComponent<CharacterController>() == true)
+            if (this.gameObject.GetComponent<CharacterController>() == true)
             {
                 CharacterController cc = GetComponent<CharacterController>();
 
                 cc.enabled = false;
                 transform.position = BluePos.transform.position;
-                transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
-                this.GetComponent<CharacterController>().attachedRigidbody.velocity = cc.velocity;
-
+                Quaternion rotation = Quaternion.Euler(0, 180f, 0);
+                transform.rotation = rotation;
                 cc.enabled = true;
             }
             else
@@ -52,7 +50,7 @@ public class PortalManager : MonoBehaviour
                 Rigidbody rb = GetComponent<Rigidbody>();
                 rb.Sleep();
                 transform.position = BluePos.transform.position;
-                transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);
+                transform.rotation = BluePos.transform.rotation;
                 this.GetComponent<Rigidbody>().velocity = rb.velocity;
 
                 rb.WakeUp();
