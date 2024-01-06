@@ -70,7 +70,7 @@ public class MultipleActivate : MonoBehaviour
     {
          Debug.Log("Activated");
          locke.SetActive(false);
-         door1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-         door2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+         door1.SetActive(false);
+         door2.SetActive(false);
     }
 }

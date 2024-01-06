@@ -10,7 +10,8 @@ public class ColoresLampara : MonoBehaviour
         verde,
         azul,
         amarillo,
-        falso
+        falso,
+        noLampara
     };
     bool mActivated;
 
