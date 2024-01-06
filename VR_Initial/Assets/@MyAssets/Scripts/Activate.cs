@@ -32,13 +32,35 @@ public class Activate : MonoBehaviour
     {
         if(lampara1 != null && lampara1.GetComponent<ColoresLampara>().GetActivated())
         {
-            Debug.Log("Activated");
-            if(mat != null)
-            {
-                this.GetComponent<MeshRenderer>().material = mat;
+            if (this.GetComponentInParent<MultipleActivate>() != null)
+            { 
+                if(lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.rojo)
+                {
+                    this.GetComponentInParent<MultipleActivate>().ActivateRed();
+                }
+                else if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.azul)
+                {
+                    this.GetComponentInParent<MultipleActivate>().ActivateBlue();
+                }
+                if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.verde)
+                {
+                    this.GetComponentInParent<MultipleActivate>().ActivateGreen();
+                }
+                if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.amarillo)
+                {
+                    this.GetComponentInParent<MultipleActivate>().ActivateYellow();
+                }
             }
-            locke.SetActive(false);
-            door.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            else 
+            {
+                Debug.Log("Activated");
+                if (mat != null)
+                {
+                    this.GetComponent<MeshRenderer>().material = mat;
+                }
+                locke.SetActive(false);
+                door.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            }
         }
 
     }
