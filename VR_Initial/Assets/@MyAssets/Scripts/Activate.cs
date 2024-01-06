@@ -15,13 +15,13 @@ public class Activate : MonoBehaviour
     void Start()
     {
         mActivated = false;
-        door.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     public bool GetActivated()
     {
@@ -30,42 +30,63 @@ public class Activate : MonoBehaviour
 
     void Activated()
     {
-        if (lampara1 != null && lampara1.GetComponent<ColoresLampara>().GetActivated())
+
+        if(lampara1 != null)
         {
-            if (this.GetComponentInParent<MultipleActivate>() != null)
+            ColoresLampara col = lampara1.GetComponent<ColoresLampara>();
+            if(col == null)
             {
-                if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.rojo)
+                col = lampara1.GetComponentInChildren<ColoresLampara>();
+            }
+            if (col.GetActivated())
+            {
+                if (this.GetComponentInParent<MultipleActivate>() != null)
                 {
-                    this.GetComponentInParent<MultipleActivate>().ActivateRed();
-                }
-                else if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.azul)
-                {
-                    this.GetComponentInParent<MultipleActivate>().ActivateBlue();
-                }
-                else if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.verde)
-                {
-                    this.GetComponentInParent<MultipleActivate>().ActivateGreen();
-                }
-                else if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.amarillo)
-                {
-                    this.GetComponentInParent<MultipleActivate>().ActivateYellow();
+                    if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.rojo)
+                    {
+                        this.GetComponentInParent<MultipleActivate>().ActivateRed();
+                        if (mat != null)
+                        {
+                            this.GetComponent<MeshRenderer>().material = mat;
+                        }
+                    }
+                    else if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.azul)
+                    {
+                        this.GetComponentInParent<MultipleActivate>().ActivateBlue();
+                        if (mat != null)
+                        {
+                            this.GetComponent<MeshRenderer>().material = mat;
+                        }
+                    }
+                    else if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.verde)
+                    {
+                        this.GetComponentInParent<MultipleActivate>().ActivateGreen();
+                        if (mat != null)
+                        {
+                            this.GetComponent<MeshRenderer>().material = mat;
+                        }
+                    }
+                    else if (lampara1.GetComponent<ColoresLampara>().GetColor() == ColoresLampara.Color.amarillo)
+                    {
+                        this.GetComponentInParent<MultipleActivate>().ActivateYellow();
+                        if (mat != null)
+                        {
+                            this.GetComponent<MeshRenderer>().material = mat;
+                        }
+                    }
 
                 }
-                if (mat != null)
+                else
                 {
-                    this.GetComponent<MeshRenderer>().material = mat;
+                    Debug.Log("Activated");
+                    if (mat != null)
+                    {
+                        this.GetComponent<MeshRenderer>().material = mat;
+                    }
+                    if (locke)
+                        locke.SetActive(false);
+                    door.SetActive(false);
                 }
-            }
-            else
-            {
-                Debug.Log("Activated");
-                if (mat != null)
-                {
-                    this.GetComponent<MeshRenderer>().material = mat;
-                }
-                if (locke)
-                    locke.SetActive(false);
-                door.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             }
         }
 
