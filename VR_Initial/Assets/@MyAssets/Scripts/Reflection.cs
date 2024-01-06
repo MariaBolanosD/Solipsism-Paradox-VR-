@@ -59,6 +59,8 @@ public class Reflection : MonoBehaviour
                 }
 
                 blue.GetComponent<LineRenderer>().positionCount = maxReflectionCount + 1;
+                blue.GetComponent<Portalrefle>().SetLightColor(this.GetComponent<ColoresLampara>());
+                blue.GetComponent<Portalrefle>().SetMaterial(this.GetComponent<LineRenderer>().material);
                 blue.GetComponent<Portalrefle>().DrawPredictedReflectionPattern1(blue.transform.position + blue.transform.forward * 1.0f, direction, 5);
             }
             else if (hit.collider.CompareTag("BluePortal") == true)
@@ -77,6 +79,8 @@ public class Reflection : MonoBehaviour
                 }
 
                 orange.GetComponent<LineRenderer>().positionCount = maxReflectionCount + 1;
+                orange.GetComponent<Portalrefle>().SetLightColor(this.GetComponent<ColoresLampara>());
+                orange.GetComponent<Portalrefle>().SetMaterial(this.GetComponent<LineRenderer>().material);
                 orange.GetComponent<Portalrefle>().DrawPredictedReflectionPattern1(orange.transform.position + orange.transform.forward * 1.0f, direction, 5);
             }
             else if (hit.collider.CompareTag("Lampara") == true)

@@ -9,11 +9,13 @@ public class Activate : MonoBehaviour
     public GameObject lampara1;
     public GameObject door;
     public Material mat;
+    public GameObject locke;
 
     // Start is called before the first frame update
     void Start()
     {
-        mActivated = false;   
+        mActivated = false;
+        door.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
     // Update is called once per frame
@@ -31,8 +33,12 @@ public class Activate : MonoBehaviour
         if(lampara1 != null && lampara1.GetComponent<ColoresLampara>().GetActivated())
         {
             Debug.Log("Activated");
-            this.GetComponent<MeshRenderer>().material = mat;
-            door.SetActive(false);
+            if(mat != null)
+            {
+                this.GetComponent<MeshRenderer>().material = mat;
+            }
+            locke.SetActive(false);
+            door.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
 
     }
