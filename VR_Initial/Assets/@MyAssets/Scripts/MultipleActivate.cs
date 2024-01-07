@@ -19,8 +19,6 @@ public class MultipleActivate : MonoBehaviour
         blue = false;
         green = false;
         yellow = false;
-        door1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        door2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
     // Update is called once per frame
