@@ -11,6 +11,7 @@ public class MultipleActivate : MonoBehaviour
     public GameObject locke;
     public GameObject door1;
     public GameObject door2;
+    public GameObject Cube;
 
     // Start is called before the first frame update
     void Start()
@@ -70,5 +71,9 @@ public class MultipleActivate : MonoBehaviour
          locke.SetActive(false);
          door1.SetActive(false);
          door2.SetActive(false);
+        if (Cube != null)
+        {
+            Cube.SetActive(true);
+        }
     }
 }

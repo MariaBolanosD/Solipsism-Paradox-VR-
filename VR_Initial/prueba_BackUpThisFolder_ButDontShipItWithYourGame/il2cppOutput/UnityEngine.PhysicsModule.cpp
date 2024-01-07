@@ -2718,15 +2718,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_set_isKinematic_m6C3FD3EA358DA
 	_il2cpp_icall_func = (Rigidbody_set_isKinematic_m6C3FD3EA358DADA3B191F2449CF1C4F8B22695ED_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Rigidbody::set_isKinematic(System.Boolean)");
 	_il2cpp_icall_func(__this, ___value0);
 }
-// System.Void UnityEngine.Rigidbody::set_constraints(UnityEngine.RigidbodyConstraints)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Rigidbody_set_constraints_mE81BF0DAEB980E320538231E092CA4663885A9A3 (Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* __this, int32_t ___value0, const RuntimeMethod* method) 
-{
-	typedef void (*Rigidbody_set_constraints_mE81BF0DAEB980E320538231E092CA4663885A9A3_ftn) (Rigidbody_t268697F5A994213ED97393309870968BC1C7393C*, int32_t);
-	static Rigidbody_set_constraints_mE81BF0DAEB980E320538231E092CA4663885A9A3_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Rigidbody_set_constraints_mE81BF0DAEB980E320538231E092CA4663885A9A3_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Rigidbody::set_constraints(UnityEngine.RigidbodyConstraints)");
-	_il2cpp_icall_func(__this, ___value0);
-}
 // UnityEngine.CollisionDetectionMode UnityEngine.Rigidbody::get_collisionDetectionMode()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Rigidbody_get_collisionDetectionMode_m5A18E2DE70F4C37841300A34A183FF3ADE01D943 (Rigidbody_t268697F5A994213ED97393309870968BC1C7393C* __this, const RuntimeMethod* method) 
 {
