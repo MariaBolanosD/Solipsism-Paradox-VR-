@@ -8,7 +8,6 @@ public class Reflection1 : MonoBehaviour
 
     public int maxReflectionCount = 5;
     public float maxStepDistance = 200;
-    public Color colorcito;
 
     // Start is called before the first frame update
     void Start()
@@ -63,8 +62,8 @@ public class Reflection1 : MonoBehaviour
         line.endColor = Color.red;
 
         // set width of the renderer
-        //line.startWidth = 0.3f;
-        //line.endWidth = 0.3f;
+        line.startWidth = 0.05f;
+        line.endWidth = 0.05f;
 
         // set the position
         line.SetPosition(indx, pos0);
