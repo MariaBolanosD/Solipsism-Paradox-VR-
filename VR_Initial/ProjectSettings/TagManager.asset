@@ -8,6 +8,8 @@ TagManager:
   - OrangePortal
   - Lampara
   - Target
+  - LLimit
+  - RLimit
   layers:
   - Default
   - TransparentFX
