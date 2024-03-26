@@ -8,7 +8,7 @@ public class LaserShooting : MonoBehaviour
 
     public int gunDamage = 1;                                            // Set the number of hitpoints that this gun will take away from shot objects with a health script
     public float fireRate = 0.25f;                                        // Number in seconds which controls how often the player can fire
-    public float weaponRange = 500f;                                        // Distance in Unity units over which the player can fire
+    public float weaponRange = 800f;                                        // Distance in Unity units over which the player can fire
     public float hitForce = 100f;                                        // Amount of force which will be added to objects with a rigidbody shot by the player
     public Transform gunEnd;                                            // Holds a reference to the gun end object, marking the muzzle location of the gun
 
@@ -59,7 +59,7 @@ public class LaserShooting : MonoBehaviour
             // Check if our raycast has hit anything
             Ray ray = new Ray(this.transform.position, this.transform.forward);
             //if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
-            if (Physics.Raycast(ray, out hit, weaponRange))
+            if (Physics.Raycast(ray, out hit, 1000000000))
             {
                 // Set the end position for our laser line 
                 laserLine.SetPosition(1, hit.point);
