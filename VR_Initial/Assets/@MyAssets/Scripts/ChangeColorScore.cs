@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ChangeColorScore : MonoBehaviour
 {
-    [SerializeField] private Color _colorRed;
-    [SerializeField] private Color _colorBlue;
+    [SerializeField] private GameObject _Red;
+    [SerializeField] private GameObject _Blue;
     [SerializeField] private MeshRenderer _meshRenderer;
 
+
+    ScoreUpdater p1_red;
+    ScoreUpdater p2_blue;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        p1_red = _Red.GetComponent<ScoreUpdater>();
+        p2_blue = _Blue.GetComponent<ScoreUpdater>();
     }
 
     // Update is called once per frame
@@ -20,14 +24,17 @@ public class ChangeColorScore : MonoBehaviour
     {
         if( _meshRenderer != null )
         {
-           /* if(player1.score > player2.score )
+
+            if(p1_red.GetScore() > p2_blue.GetScore())
             {
-                _meshRenderer.material.color = _colorRed;
+                _meshRenderer.material.color = Color.red;
             }
             else
             {
-                _meshRenderer.material.color = _colorBlue;
-            }*/
+                _meshRenderer.material.color = Color.blue;            
+           
+            }
+
         }
             
 

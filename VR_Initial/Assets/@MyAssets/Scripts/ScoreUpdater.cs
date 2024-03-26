@@ -9,6 +9,9 @@ public class ScoreUpdater : MonoBehaviour
 
     private Vector3 distance_Player = new Vector3(150,150,150);
     private string tagger ;
+
+    private int score = 0;
+
     private void Start()
     {
         tagger= Limit.tag;
@@ -17,10 +20,23 @@ public class ScoreUpdater : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-             TeleportInsideTaggedArea();
-        }
+       //if (Input.GetKeyDown(KeyCode.Space))
+       //{
+       //     TeleportInsideTaggedArea();
+       //}
+
+
+    }
+
+    public void UpdateScoreOnHit()
+    {
+        score += 1;
+        TeleportInsideTaggedArea();
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 
     void OnCollisionEnter(Collision collision)

@@ -65,21 +65,16 @@ public class LaserShooting : MonoBehaviour
                 laserLine.SetPosition(1, hit.point);
 
                 // Get a reference to a health script attached to the collider we hit
-                ShootableBox health = hit.collider.GetComponent<ShootableBox>();
+                ScoreUpdater target = hit.collider.GetComponent<ScoreUpdater>();
 
-                // If there was a health script attached
-                if (health != null)
-                {
-                    // Call the damage function of that script, passing in our gunDamage variable
-                    health.Damage(gunDamage);
-                }
+                target.UpdateScoreOnHit();
 
                 // Check if the object we hit has a rigidbody attached
-                if (hit.rigidbody != null)
-                {
-                    // Add force to the rigidbody we hit, in the direction from which it was hit
-                    hit.rigidbody.AddForce(-hit.normal * hitForce);
-                }
+                //if (hit.rigidbody != null)
+                //{
+                //    // Add force to the rigidbody we hit, in the direction from which it was hit
+                //    hit.rigidbody.AddForce(-hit.normal * hitForce);
+                //}
             }
             else
             {
