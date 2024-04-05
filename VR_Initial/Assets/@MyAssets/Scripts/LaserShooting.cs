@@ -66,8 +66,8 @@ public class LaserShooting : MonoBehaviour
 
                 // Get a reference to a health script attached to the collider we hit
                 ScoreUpdater target = hit.collider.GetComponent<ScoreUpdater>();
-
-                target.UpdateScoreOnHit();
+                if(target)  
+                    target.UpdateScoreOnHit();
 
                 // Check if the object we hit has a rigidbody attached
                 //if (hit.rigidbody != null)

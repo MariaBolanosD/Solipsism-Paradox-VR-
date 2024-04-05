@@ -6,6 +6,7 @@ public class ScoreUpdater : MonoBehaviour
 {
     [SerializeField] GameObject Target;
     [SerializeField] GameObject Limit;
+    [SerializeField] GameObject ScoreGO;
 
     private Vector3 distance_Player = new Vector3(150,150,150);
     private string tagger ;
@@ -31,6 +32,7 @@ public class ScoreUpdater : MonoBehaviour
     public void UpdateScoreOnHit()
     {
         score += 1;
+        ScoreGO.GetComponent<ColorWinner>().UpdateScore();
         TeleportInsideTaggedArea();
     }
 
