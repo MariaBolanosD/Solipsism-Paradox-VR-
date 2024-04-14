@@ -36,51 +36,58 @@ public class LaserShooting : MonoBehaviour
 
     void Update()
     {
-        // Check if the player has pressed the fire button and if enough time has elapsed since they last fired
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        var rightHandDevices = new List<UnityEngine.XR.InputDevice>();
+        UnityEngine.XR.InputDevices.GetDevicesAtXRNode(UnityEngine.XR.XRNode.RightHand, rightHandDevices);
+        if (rightHandDevices.Count == 1)
         {
-            // Update the time when our player can fire next
-            nextFire = Time.time + fireRate;
-
-            // Start our ShotEffect coroutine to turn our laser line on and off
-            StartCoroutine(ShotEffect());
-
-
-
-            // Create a vector at the center of our camera's viewport
-            Vector3 rayOrigin = this.transform.position;// fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
-
-            // Declare a raycast hit to store information about what our raycast has hit
-            RaycastHit hit;
-
-            // Set the start position for our visual effect for our laser to the position of gunEnd
-            laserLine.SetPosition(0, gunEnd.position);
-
-            // Check if our raycast has hit anything
-            Ray ray = new Ray(this.transform.position, this.transform.forward);
-            //if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
-            if (Physics.Raycast(ray, out hit, 1000000000))
+            //Input.GetButtonDown("Fire1")
+            bool triggerValue;
+            // Check if the player has pressed the fire button and if enough time has elapsed since they last fired
+            if (rightHandDevices[0].TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerValue) && triggerValue && Time.time > nextFire)
             {
-                // Set the end position for our laser line 
-                laserLine.SetPosition(1, hit.point);
+                // Update the time when our player can fire next
+                nextFire = Time.time + fireRate;
 
-                // Get a reference to a health script attached to the collider we hit
-                ScoreUpdater target = hit.collider.GetComponent<ScoreUpdater>();
-                if(target)  
-                    target.UpdateScoreOnHit();
+                // Start our ShotEffect coroutine to turn our laser line on and off
+                StartCoroutine(ShotEffect());
 
-                // Check if the object we hit has a rigidbody attached
-                //if (hit.rigidbody != null)
-                //{
-                //    // Add force to the rigidbody we hit, in the direction from which it was hit
-                //    hit.rigidbody.AddForce(-hit.normal * hitForce);
-                //}
-            }
-            else
-            {
-                // If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
-                //laserLine.SetPosition(1, rayOrigin + (fpsCam.transform.forward * weaponRange));
-                laserLine.SetPosition(1, rayOrigin + (this.transform.forward * weaponRange));
+
+
+                // Create a vector at the center of our camera's viewport
+                Vector3 rayOrigin = this.transform.position;// fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+
+                // Declare a raycast hit to store information about what our raycast has hit
+                RaycastHit hit;
+
+                // Set the start position for our visual effect for our laser to the position of gunEnd
+                laserLine.SetPosition(0, gunEnd.position);
+
+                // Check if our raycast has hit anything
+                Ray ray = new Ray(this.transform.position, this.transform.forward);
+                //if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
+                if (Physics.Raycast(ray, out hit, 1000000000))
+                {
+                    // Set the end position for our laser line 
+                    laserLine.SetPosition(1, hit.point);
+
+                    // Get a reference to a health script attached to the collider we hit
+                    ScoreUpdater target = hit.collider.GetComponent<ScoreUpdater>();
+                    if (target)
+                        target.UpdateScoreOnHit();
+
+                    // Check if the object we hit has a rigidbody attached
+                    //if (hit.rigidbody != null)
+                    //{
+                    //    // Add force to the rigidbody we hit, in the direction from which it was hit
+                    //    hit.rigidbody.AddForce(-hit.normal * hitForce);
+                    //}
+                }
+                else
+                {
+                    // If we did not hit anything, set the end of the line to a position directly in front of the camera at the distance of weaponRange
+                    //laserLine.SetPosition(1, rayOrigin + (fpsCam.transform.forward * weaponRange));
+                    laserLine.SetPosition(1, rayOrigin + (this.transform.forward * weaponRange));
+                }
             }
         }
     }
