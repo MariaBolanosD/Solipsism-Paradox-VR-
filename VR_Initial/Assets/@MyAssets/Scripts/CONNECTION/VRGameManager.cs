@@ -18,9 +18,9 @@ public class VRGameManager : NetworkBehaviour
 
     public enum State
     {
-        Init = 0,
+        Inicial = 0,
         SelectPlayer = 1,
-        Main = 2
+        Game = 2
     }
 
     private NetworkVariable<State> currentState = new NetworkVariable<State>();
@@ -46,7 +46,7 @@ public class VRGameManager : NetworkBehaviour
             Instance = this;
 
         DontDestroyOnLoad(gameObject);
-        currentState.Value = State.Init;
+        currentState.Value = State.Inicial;
 
         selectedPlayer = new NetworkVariable<PlayerData>();
     }
@@ -90,7 +90,7 @@ public class VRGameManager : NetworkBehaviour
     public void LoadInitialMenu()
     {
         NetworkManager.Singleton.Shutdown();
-        SceneManager.LoadScene(State.Init.ToString());
+        SceneManager.LoadScene(State.Inicial.ToString());
     }
 
     public void Quit()
@@ -100,7 +100,7 @@ public class VRGameManager : NetworkBehaviour
 
     private void GoToMainGame()
     {
-        currentState.Value = State.Main;
+        currentState.Value = State.Game;
         LoadNetworkScene();
     }
 
@@ -176,7 +176,7 @@ public class VRGameManager : NetworkBehaviour
     {
         switch (currentState.Value)
         {
-            case State.Init:
+            case State.Inicial:
                 ClientDisconnected.Invoke();
                 break;
             case State.SelectPlayer:
@@ -196,7 +196,7 @@ public class VRGameManager : NetworkBehaviour
                     }
                 }
                 break;
-            case State.Main:
+            case State.Game:
                 LoadInitialMenu();
                 break;
         }
