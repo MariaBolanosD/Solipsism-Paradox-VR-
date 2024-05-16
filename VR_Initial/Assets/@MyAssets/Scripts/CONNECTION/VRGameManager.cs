@@ -113,22 +113,22 @@ public class VRGameManager : NetworkBehaviour
             {
                 if (selectedPlayer.Value.type == 0) //it's left
                 { 
-                  playerGO = Instantiate(_bluePlayerPrefab);
+                  playerGO = Instantiate(_redPlayerPrefab);
                 }
                 else
                 {
-                    playerGO = Instantiate(_redPlayerPrefab);
+                    playerGO = Instantiate(_bluePlayerPrefab);
                 }
             }
             else
             {
                 if (selectedPlayer.Value.type == 0)
                 {
-                    playerGO = Instantiate(_redPlayerPrefab);
+                    playerGO = Instantiate(_bluePlayerPrefab);
                 }
                 else
                 {
-                    playerGO = Instantiate(_bluePlayerPrefab);
+                    playerGO = Instantiate(_redPlayerPrefab);
                 }
             }
             playerGO.GetComponent<NetworkObject>().SpawnAsPlayerObject(id, true);

@@ -242,13 +242,13 @@ MonoBehaviour:
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
-      Prefab: {fileID: 3822798235822351749, guid: b977df6d7b162a841834e3ac17da9bf4,
+      Prefab: {fileID: 6465548691406871194, guid: b977df6d7b162a841834e3ac17da9bf4,
         type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
     - Override: 0
-      Prefab: {fileID: 3822798235822351749, guid: 95bcf6bfdd8f38d4a94577a0f9696199,
+      Prefab: {fileID: 647633732198594675, guid: 95bcf6bfdd8f38d4a94577a0f9696199,
         type: 3}
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
@@ -2083,9 +2083,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score_Lamp: {fileID: 85262264211884939, guid: 33ee8ad9f49de684a89763b7778a4f13,
     type: 3}
-  _bluePlayerPrefab: {fileID: 3822798235822351749, guid: b977df6d7b162a841834e3ac17da9bf4,
+  _bluePlayerPrefab: {fileID: 6465548691406871194, guid: b977df6d7b162a841834e3ac17da9bf4,
     type: 3}
-  _redPlayerPrefab: {fileID: 3822798235822351749, guid: 95bcf6bfdd8f38d4a94577a0f9696199,
+  _redPlayerPrefab: {fileID: 647633732198594675, guid: 95bcf6bfdd8f38d4a94577a0f9696199,
     type: 3}
   ClientDisconnected:
     m_PersistentCalls:
