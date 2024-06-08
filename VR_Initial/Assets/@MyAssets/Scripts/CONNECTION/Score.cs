@@ -84,11 +84,11 @@ public class Score : NetworkBehaviour
         RedScore = Red.GetComponent<ScoreUpdater>().GetScore();
         BlueScore = Blue.GetComponent<ScoreUpdater>().GetScore();
 
-        if (RedScore > BlueScore)
+        if (redScore.Value > blueScore.Value)
         {
             _renderer.material = RedMat;
         }
-        else if (RedScore == BlueScore)
+        else if (redScore.Value == blueScore.Value)
         {
             _renderer.material = WhiteMat;
         }
