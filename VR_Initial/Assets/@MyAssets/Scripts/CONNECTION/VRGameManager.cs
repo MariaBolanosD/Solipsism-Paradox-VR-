@@ -19,8 +19,8 @@ public class VRGameManager : NetworkBehaviour
     public enum State
     {
         Inicial = 0,
-        SelectPlayer = 1,
-        Game = 2
+        //SelectPlayer = 0,
+        Game = 1
     }
 
     private NetworkVariable<State> currentState = new NetworkVariable<State>();
@@ -78,8 +78,9 @@ public class VRGameManager : NetworkBehaviour
     {
         NetworkManager.Singleton.StartHost();
         ResetVariables();
-        currentState.Value = State.SelectPlayer;
+        currentState.Value = State.Game;
         LoadNetworkScene();
+        
     }
 
     public void JoinGame()
@@ -113,22 +114,22 @@ public class VRGameManager : NetworkBehaviour
             {
                 if (selectedPlayer.Value.type == 0) //it's left
                 { 
-                  playerGO = Instantiate(_redPlayerPrefab);
+                  playerGO = Instantiate(_bluePlayerPrefab);
                 }
                 else
                 {
-                    playerGO = Instantiate(_bluePlayerPrefab);
+                    playerGO = Instantiate(_redPlayerPrefab);
                 }
             }
             else
             {
                 if (selectedPlayer.Value.type == 0)
                 {
-                    playerGO = Instantiate(_bluePlayerPrefab);
+                    playerGO = Instantiate(_redPlayerPrefab);
                 }
                 else
                 {
-                    playerGO = Instantiate(_redPlayerPrefab);
+                    playerGO = Instantiate(_bluePlayerPrefab);
                 }
             }
             playerGO.GetComponent<NetworkObject>().SpawnAsPlayerObject(id, true);
@@ -177,9 +178,6 @@ public class VRGameManager : NetworkBehaviour
         switch (currentState.Value)
         {
             case State.Inicial:
-                ClientDisconnected.Invoke();
-                break;
-            case State.SelectPlayer:
                 if (_clientID == NetworkManager.ServerClientId)
                 {
                     LoadInitialMenu();

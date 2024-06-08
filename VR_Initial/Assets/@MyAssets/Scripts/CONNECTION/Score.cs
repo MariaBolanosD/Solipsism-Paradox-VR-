@@ -10,6 +10,16 @@ using UnityEngine.UI;
 
 public class Score : NetworkBehaviour
 {
+    [SerializeField] Material RedMat;
+    [SerializeField] Material BlueMat;
+    [SerializeField] Material WhiteMat;
+    [SerializeField] GameObject Red;
+    [SerializeField] GameObject Blue;
+
+    private int RedScore;
+    private int BlueScore;
+
+    private Renderer _renderer;
     public static Score Instance;
 
     public NetworkVariable<int> redScore = new NetworkVariable<int>(0); // left
@@ -27,6 +37,7 @@ public class Score : NetworkBehaviour
 
         if (IsServer)
             VRGameManager.Instance.SpawnPlayers();
+        _renderer = GetComponent<Renderer>();
 
     }
 
@@ -34,6 +45,8 @@ public class Score : NetworkBehaviour
     {
         if (!IsServer)
             return;
+        redScore.Value = Red.GetComponent<ScoreUpdater>().GetScore();
+        blueScore.Value = Blue.GetComponent<ScoreUpdater>().GetScore();
 
 
         if (timer.Value >= 0)
@@ -66,17 +79,23 @@ public class Score : NetworkBehaviour
         Time.timeScale = 0;
     }
 
-    public void ScoredGoal(string _direction) // Esto sería el score cuando se dispara a la bola por cada jugador para aumentar el score.
+    public void UpdateScore()
     {
+        RedScore = Red.GetComponent<ScoreUpdater>().GetScore();
+        BlueScore = Blue.GetComponent<ScoreUpdater>().GetScore();
 
-        if (_direction == "Right")
+        if (RedScore > BlueScore)
         {
-            blueScore.Value++;
-
+            _renderer.material = RedMat;
         }
-        else if (_direction == "Left")
+        else if (RedScore == BlueScore)
         {
-            redScore.Value++;
+            _renderer.material = WhiteMat;
+        }
+        else
+        {
+            _renderer.material = BlueMat;
         }
     }
+
 }

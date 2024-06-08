@@ -45,6 +45,7 @@ public class ScoreUpdater : MonoBehaviour
     {
         if (collision.collider.CompareTag(tagger))
         {
+            UpdateScoreOnHit();
             TeleportInsideTaggedArea();
         }
     }

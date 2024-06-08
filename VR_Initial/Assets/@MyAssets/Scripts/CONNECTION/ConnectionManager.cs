@@ -8,7 +8,7 @@ public class ConnectionManager : MonoBehaviour
     public void StartHost()
     {
         NetworkManager.Singleton.StartHost();
-        //NetworkManager.Singleton.SceneManager.LoadScene("Main_MP", UnityEngine.SceneManagement.LoadSceneMode.Single);
+       // NetworkManager.Singleton.SceneManager.LoadScene("Game", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 
     public void StartClient()

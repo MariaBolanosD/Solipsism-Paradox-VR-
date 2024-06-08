@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/@MyAssets/Scenes/Level1.unity
-    guid: 8a2646d864310c84db4e3d00678192ef
   - enabled: 1
-    path: Assets/@MyAssets/Scenes/Sara.unity
-    guid: 34894ceab78b66145ad95c673ac84035
+    path: Assets/@MyAssets/Scenes/FINAL_MJ/Inicial.unity
+    guid: 4df16619b9e2a85408a4027ccb645cbf
+  - enabled: 0
+    path: Assets/@MyAssets/Scenes/FINAL_MJ/SelectPlayer.unity
+    guid: 30b5f2a597823bd418ab63349c0b9e4c
+  - enabled: 1
+    path: Assets/@MyAssets/Scenes/FINAL_MJ/Game.unity
+    guid: d9bf36584a250d74d88ff8b399ee4bd5
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c652e3d0b0a261b478ef27fe465ef974,
       type: 2}
