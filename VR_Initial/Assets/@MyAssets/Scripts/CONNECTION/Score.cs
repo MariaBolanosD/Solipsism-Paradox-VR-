@@ -24,7 +24,9 @@ public class Score : NetworkBehaviour
 
     public NetworkVariable<int> redScore = new NetworkVariable<int>(0); // left
     public NetworkVariable<int> blueScore = new NetworkVariable<int>(0); // right
-    public NetworkVariable<float> timer = new NetworkVariable<float>(10);
+    public NetworkVariable<float> timer = new NetworkVariable<float>(300);
+
+    public NetworkVariable<bool> hostSpawned;
 
 
     private void Awake()
@@ -36,8 +38,8 @@ public class Score : NetworkBehaviour
     {
 
         if (IsServer)
-            VRGameManager.Instance.SpawnPlayers();
         _renderer = GetComponent<Renderer>();
+      
 
     }
 

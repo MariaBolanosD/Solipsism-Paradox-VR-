@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 2942651479944827623}
   - component: {fileID: 8057957339195156046}
   - component: {fileID: 5339105915262965636}
+  - component: {fileID: -2559497664334841295}
   m_Layer: 0
   m_Name: VRPlayer_RED
   m_TagString: Untagged
@@ -155,6 +156,18 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &-2559497664334841295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647633732198594675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d061390aa4787448a54d6d39ab8ed68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &926329015357982081
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,7 +959,7 @@ GameObject:
   - component: {fileID: 8345951723349623049}
   - component: {fileID: 4416445259638387683}
   m_Layer: 0
-  m_Name: Laser_blue
+  m_Name: Laser_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

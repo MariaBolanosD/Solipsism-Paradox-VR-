@@ -12,6 +12,8 @@
 
 
 
+// Unity.Netcode.FixedStringSerializer`1<System.Boolean>
+struct FixedStringSerializer_1_t883506FF7B946E3ABFCFDE568A27C06B21111FAD;
 // Unity.Netcode.FixedStringSerializer`1<System.Int32>
 struct FixedStringSerializer_1_tB5B522D15BDC91352D08AC007B3737A953B10B73;
 // Unity.Netcode.FixedStringSerializer`1<System.Int32Enum>
@@ -24,6 +26,8 @@ struct FixedStringSerializer_1_tFA24F5819AF621584C052DACC0C9D2BF384CA5F8;
 struct FixedStringSerializer_1_t41EDB580D13F35E217BF398EFB51BEDAA2F2F91C;
 // UnityEngine.UIElements.FocusEventBase`1<System.Object>
 struct FocusEventBase_1_t5C59DF705446E1FD98D905F21B5B80F74D2D16A8;
+// Unity.Netcode.FixedStringSerializer`1/GetLengthDelegate<System.Boolean>
+struct GetLengthDelegate_t19016E09541E71257F28B0C2CD30222B8A372005;
 // Unity.Netcode.FixedStringSerializer`1/GetLengthDelegate<System.Int32>
 struct GetLengthDelegate_tC9C784D14C45E75564BF4E2A862B1AB0B72D4530;
 // Unity.Netcode.FixedStringSerializer`1/GetLengthDelegate<System.Int32Enum>
@@ -34,6 +38,8 @@ struct GetLengthDelegate_tFED96D76047399DA7AE49F584A28EBF45211E20F;
 struct GetLengthDelegate_tE1F4FBAA079B19065F0E3054DF214DC5B80C7997;
 // Unity.Netcode.FixedStringSerializer`1/GetLengthDelegate<Unity.Netcode.Components.NetworkTransform/NetworkTransformState>
 struct GetLengthDelegate_tCC867C494CC2513F4671223A959A86924CA258A2;
+// Unity.Netcode.FixedStringSerializer`1/GetUnsafePtrDelegate<System.Boolean>
+struct GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03;
 // Unity.Netcode.FixedStringSerializer`1/GetUnsafePtrDelegate<System.Int32>
 struct GetUnsafePtrDelegate_t349A390726EC77C21FA96520115C33D972722088;
 // Unity.Netcode.FixedStringSerializer`1/GetUnsafePtrDelegate<System.Int32Enum>
@@ -62,6 +68,8 @@ struct List_1_t6FBD33EFCD307A54E0E8F62AAA0677E2ADAE58D3;
 struct List_1_t1E327CB749CA1F2F2DA41B2D4DFF57FD6BE0FF66;
 // UnityEngine.UIElements.ObjectPool`1<System.Object>
 struct ObjectPool_1_tC06B45D8A0C7CBBDAE418090727D1DF1F2FCB9F6;
+// Unity.Netcode.FixedStringSerializer`1/SetLengthDelegate<System.Boolean>
+struct SetLengthDelegate_t802C232A5FBD900B43D08031C7C7379DEF7D2713;
 // Unity.Netcode.FixedStringSerializer`1/SetLengthDelegate<System.Int32>
 struct SetLengthDelegate_t26C88CE0277772229A4FCE365730575002B1E10D;
 // Unity.Netcode.FixedStringSerializer`1/SetLengthDelegate<System.Int32Enum>
@@ -186,6 +194,17 @@ IL2CPP_EXTERN_C_END
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+
+// Unity.Netcode.FixedStringSerializer`1<System.Boolean>
+struct FixedStringSerializer_1_t883506FF7B946E3ABFCFDE568A27C06B21111FAD  : public RuntimeObject
+{
+	// Unity.Netcode.FixedStringSerializer`1/GetLengthDelegate<T> Unity.Netcode.FixedStringSerializer`1::GetLength
+	GetLengthDelegate_t19016E09541E71257F28B0C2CD30222B8A372005* ___GetLength_0;
+	// Unity.Netcode.FixedStringSerializer`1/SetLengthDelegate<T> Unity.Netcode.FixedStringSerializer`1::SetLength
+	SetLengthDelegate_t802C232A5FBD900B43D08031C7C7379DEF7D2713* ___SetLength_1;
+	// Unity.Netcode.FixedStringSerializer`1/GetUnsafePtrDelegate<T> Unity.Netcode.FixedStringSerializer`1::GetUnsafePtr
+	GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03* ___GetUnsafePtr_2;
+};
 
 // Unity.Netcode.FixedStringSerializer`1<System.Int32>
 struct FixedStringSerializer_1_tB5B522D15BDC91352D08AC007B3737A953B10B73  : public RuntimeObject
@@ -385,17 +404,6 @@ struct NativeArray_1_t453E3DEA4CC9F1056F24E417C3308C35174BC184
 
 // Unity.Collections.NativeArray`1<UnityEngine.Rendering.VisibleLight>
 struct NativeArray_1_t71485A1E60B31CCAD3E525C907CF172E8B804468 
-{
-	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
-	void* ___m_Buffer_0;
-	// System.Int32 Unity.Collections.NativeArray`1::m_Length
-	int32_t ___m_Length_1;
-	// Unity.Collections.Allocator Unity.Collections.NativeArray`1::m_AllocatorLabel
-	int32_t ___m_AllocatorLabel_2;
-};
-
-// Unity.Collections.NativeArray`1<UnityEngine.Rendering.Universal.ZBin>
-struct NativeArray_1_tC826716DABB82121E3B759802E04D86B6B20F991 
 {
 	// System.Void* Unity.Collections.NativeArray`1::m_Buffer
 	void* ___m_Buffer_0;
@@ -1088,24 +1096,6 @@ struct ForJobStruct_1_t99B16745639E9B400DE41F37194773646B52ED9C
 };
 
 struct ForJobStruct_1_t99B16745639E9B400DE41F37194773646B52ED9C_StaticFields
-{
-	// System.IntPtr Unity.Jobs.IJobForExtensions/ForJobStruct`1::jobReflectionData
-	intptr_t ___jobReflectionData_0;
-};
-
-// Unity.Jobs.IJobForExtensions/ForJobStruct`1<UnityEngine.Rendering.Universal.ZBinningJob>
-struct ForJobStruct_1_t6E436619321F6CA11F646C1D0865C3B46ED2499F 
-{
-	union
-	{
-		struct
-		{
-		};
-		uint8_t ForJobStruct_1_tAB04C8B3A07BA17B7B5F0CB69EC1DBB353DE618F__padding[1];
-	};
-};
-
-struct ForJobStruct_1_t6E436619321F6CA11F646C1D0865C3B46ED2499F_StaticFields
 {
 	// System.IntPtr Unity.Jobs.IJobForExtensions/ForJobStruct`1::jobReflectionData
 	intptr_t ___jobReflectionData_0;
@@ -6251,19 +6241,6 @@ struct SliceCullingJob_t9EF107BD36223E7805C502BF1FF8E1767FB326CC
 	NativeArray_1_t453E3DEA4CC9F1056F24E417C3308C35174BC184 ___sliceLightMasks_11;
 };
 
-// UnityEngine.Rendering.Universal.ZBinningJob
-struct ZBinningJob_t9BC217C31924E66E667568C1B51EA2F44FA0A08E 
-{
-	// Unity.Collections.NativeArray`1<UnityEngine.Rendering.Universal.ZBin> UnityEngine.Rendering.Universal.ZBinningJob::bins
-	NativeArray_1_tC826716DABB82121E3B759802E04D86B6B20F991 ___bins_1;
-	// Unity.Collections.NativeArray`1<UnityEngine.Rendering.Universal.LightMinMaxZ> UnityEngine.Rendering.Universal.ZBinningJob::minMaxZs
-	NativeArray_1_t0670C94F239C615B37C52F3DC5FD502E2CE8A0A9 ___minMaxZs_2;
-	// System.Int32 UnityEngine.Rendering.Universal.ZBinningJob::binOffset
-	int32_t ___binOffset_3;
-	// System.Single UnityEngine.Rendering.Universal.ZBinningJob::zFactor
-	float ___zFactor_4;
-};
-
 // Unity.Mathematics.float4x4
 struct float4x4_t7EDD16F7F57DC7F61A6302535F7C19FB97915DF2 
 {
@@ -6615,11 +6592,6 @@ struct ExecuteJobFunction_tF26F64F606759A7F840F4EE7BC1A1A92071390AB  : public Mu
 {
 };
 
-// Unity.Jobs.IJobForExtensions/ForJobStruct`1/ExecuteJobFunction<UnityEngine.Rendering.Universal.ZBinningJob>
-struct ExecuteJobFunction_t0AFFAB17D6E6A2A4A262214E56C7C1159F43F634  : public MulticastDelegate_t
-{
-};
-
 // UnityEngine.UIElements.FocusEventBase`1<System.Object>
 struct FocusEventBase_1_t5C59DF705446E1FD98D905F21B5B80F74D2D16A8  : public EventBase_1_t2B9B970022841F58172C0C783B7E1040BEF85AC1
 {
@@ -6631,6 +6603,11 @@ struct FocusEventBase_1_t5C59DF705446E1FD98D905F21B5B80F74D2D16A8  : public Even
 	FocusController_t5D2E45F2CCBE3B7082DE4088EE03C2E8F736011A* ___U3CfocusControllerU3Ek__BackingField_20;
 	// System.Boolean UnityEngine.UIElements.FocusEventBase`1::<IsFocusDelegated>k__BackingField
 	bool ___U3CIsFocusDelegatedU3Ek__BackingField_21;
+};
+
+// Unity.Netcode.FixedStringSerializer`1/GetLengthDelegate<System.Boolean>
+struct GetLengthDelegate_t19016E09541E71257F28B0C2CD30222B8A372005  : public MulticastDelegate_t
+{
 };
 
 // Unity.Netcode.FixedStringSerializer`1/GetLengthDelegate<System.Int32>
@@ -6658,6 +6635,11 @@ struct GetLengthDelegate_tCC867C494CC2513F4671223A959A86924CA258A2  : public Mul
 {
 };
 
+// Unity.Netcode.FixedStringSerializer`1/GetUnsafePtrDelegate<System.Boolean>
+struct GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03  : public MulticastDelegate_t
+{
+};
+
 // Unity.Netcode.FixedStringSerializer`1/GetUnsafePtrDelegate<System.Int32>
 struct GetUnsafePtrDelegate_t349A390726EC77C21FA96520115C33D972722088  : public MulticastDelegate_t
 {
@@ -6680,6 +6662,11 @@ struct GetUnsafePtrDelegate_t87CF2E761D86EB686E096886F95B22E6AE8D588F  : public 
 
 // Unity.Netcode.FixedStringSerializer`1/GetUnsafePtrDelegate<Unity.Netcode.Components.NetworkTransform/NetworkTransformState>
 struct GetUnsafePtrDelegate_tA70445C82B57A8BA61234000E2A4C727172DEFAD  : public MulticastDelegate_t
+{
+};
+
+// Unity.Netcode.FixedStringSerializer`1/SetLengthDelegate<System.Boolean>
+struct SetLengthDelegate_t802C232A5FBD900B43D08031C7C7379DEF7D2713  : public MulticastDelegate_t
 {
 };
 
@@ -10471,8 +10458,6 @@ IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void MinMaxZJob_Execute_mC71
 IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void SliceCombineJob_Execute_m9D1B92859ABF9F1DE8ABA6314551D9B20557881B (SliceCombineJob_t1CE979EB828943E997C055871F958388C55BBE9A* IL2CPP_PARAMETER_RESTRICT __this, int32_t ___idY0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Rendering.Universal.SliceCullingJob::Execute(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void SliceCullingJob_Execute_mD597E1DDD32F4E6FD23F2D401FBAFBAC300BC0F8 (SliceCullingJob_t9EF107BD36223E7805C502BF1FF8E1767FB326CC* IL2CPP_PARAMETER_RESTRICT __this, int32_t ___index0, const RuntimeMethod* method) ;
-// System.Void UnityEngine.Rendering.Universal.ZBinningJob::Execute(System.Int32)
-IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR void ZBinningJob_Execute_m71CAC2A2E6F81C9186B92492CC8D2A92EE79681A (ZBinningJob_t9BC217C31924E66E667568C1B51EA2F44FA0A08E* IL2CPP_PARAMETER_RESTRICT __this, int32_t ___index0, const RuntimeMethod* method) ;
 // System.Boolean Unity.Netcode.FastBufferWriter::TryBeginWriteInternal(System.Int32)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool FastBufferWriter_TryBeginWriteInternal_m9DD6CDBDC49E5AF7A760EA05882BE4F52BEA1883_inline (FastBufferWriter_tE6AFE9436BD125AF309056A81B70F95625FB96EC* __this, int32_t ___bytes0, const RuntimeMethod* method) ;
 // System.Void System.OverflowException::.ctor(System.String)
@@ -33531,6 +33516,98 @@ IL2CPP_EXTERN_C  RuntimeObject* FixedList64Bytes_1_System_Collections_Generic_IE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+// System.Void Unity.Netcode.FixedStringSerializer`1<System.Boolean>::Write(Unity.Netcode.FastBufferWriter,T&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FixedStringSerializer_1_Write_m365C6CF36FC9BDA93AD173F71DF54BF40622E7E0_gshared (FixedStringSerializer_1_t883506FF7B946E3ABFCFDE568A27C06B21111FAD* __this, FastBufferWriter_tE6AFE9436BD125AF309056A81B70F95625FB96EC ___writer0, bool* ___value1, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&FastBufferWriter_WriteUnmanagedSafe_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1AA937B90B0CEB5250851747EF2F86B52A28969E_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	uint8_t* V_1 = NULL;
+	{
+		// int length = GetLength(ref value);
+		GetLengthDelegate_t19016E09541E71257F28B0C2CD30222B8A372005* L_0 = (GetLengthDelegate_t19016E09541E71257F28B0C2CD30222B8A372005*)__this->___GetLength_0;
+		bool* L_1 = ___value1;
+		NullCheck(L_0);
+		int32_t L_2;
+		L_2 = ((  int32_t (*) (GetLengthDelegate_t19016E09541E71257F28B0C2CD30222B8A372005*, bool*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 1)))(L_0, L_1, il2cpp_rgctx_method(method->klass->rgctx_data, 1));
+		V_0 = L_2;
+		// byte* data = GetUnsafePtr(ref value);
+		GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03* L_3 = (GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03*)__this->___GetUnsafePtr_2;
+		bool* L_4 = ___value1;
+		NullCheck(L_3);
+		uint8_t* L_5;
+		L_5 = ((  uint8_t* (*) (GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03*, bool*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 3)))(L_3, L_4, il2cpp_rgctx_method(method->klass->rgctx_data, 3));
+		V_1 = L_5;
+		// writer.WriteUnmanagedSafe(length);
+		FastBufferWriter_WriteUnmanagedSafe_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1AA937B90B0CEB5250851747EF2F86B52A28969E_inline((&___writer0), (&V_0), FastBufferWriter_WriteUnmanagedSafe_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m1AA937B90B0CEB5250851747EF2F86B52A28969E_RuntimeMethod_var);
+		// writer.WriteBytesSafe(data, length);
+		uint8_t* L_6 = V_1;
+		int32_t L_7 = V_0;
+		FastBufferWriter_WriteBytesSafe_mD6983BBB2B1A249EA173F6CF20B1B2D93B1079F6_inline((&___writer0), L_6, L_7, 0, NULL);
+		// }
+		return;
+	}
+}
+// System.Void Unity.Netcode.FixedStringSerializer`1<System.Boolean>::Read(Unity.Netcode.FastBufferReader,T&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FixedStringSerializer_1_Read_m017EEE1E1168244D832F4AFE6109B8ECBA54AAF2_gshared (FixedStringSerializer_1_t883506FF7B946E3ABFCFDE568A27C06B21111FAD* __this, FastBufferReader_t1FA49C2063B2EAAADB8DE7FF571FF284719D0E99 ___reader0, bool* ___value1, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&FastBufferReader_ReadValueSafe_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m36F412A8CC69D06358846FD86C26688BE6C294A1_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	int32_t V_0 = 0;
+	ForPrimitives_t4120884959A3BC3EAC3D4980A4DA8010E09DA292 V_1;
+	memset((&V_1), 0, sizeof(V_1));
+	{
+		// value = new T();
+		bool* L_0 = ___value1;
+		bool L_1;
+		L_1 = ((  bool (*) (const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 4)))(il2cpp_rgctx_method(method->klass->rgctx_data, 4));
+		*(bool*)L_0 = L_1;
+		// reader.ReadValueSafe(out int length);
+		il2cpp_codegen_initobj((&V_1), sizeof(ForPrimitives_t4120884959A3BC3EAC3D4980A4DA8010E09DA292));
+		ForPrimitives_t4120884959A3BC3EAC3D4980A4DA8010E09DA292 L_2 = V_1;
+		FastBufferReader_ReadValueSafe_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m36F412A8CC69D06358846FD86C26688BE6C294A1_inline((&___reader0), (&V_0), L_2, FastBufferReader_ReadValueSafe_TisInt32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_m36F412A8CC69D06358846FD86C26688BE6C294A1_RuntimeMethod_var);
+		// SetLength(ref value, length);
+		SetLengthDelegate_t802C232A5FBD900B43D08031C7C7379DEF7D2713* L_3 = (SetLengthDelegate_t802C232A5FBD900B43D08031C7C7379DEF7D2713*)__this->___SetLength_1;
+		bool* L_4 = ___value1;
+		int32_t L_5 = V_0;
+		NullCheck(L_3);
+		((  void (*) (SetLengthDelegate_t802C232A5FBD900B43D08031C7C7379DEF7D2713*, bool*, int32_t, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 6)))(L_3, L_4, L_5, il2cpp_rgctx_method(method->klass->rgctx_data, 6));
+		// reader.ReadBytesSafe(GetUnsafePtr(ref value), length);
+		GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03* L_6 = (GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03*)__this->___GetUnsafePtr_2;
+		bool* L_7 = ___value1;
+		NullCheck(L_6);
+		uint8_t* L_8;
+		L_8 = ((  uint8_t* (*) (GetUnsafePtrDelegate_t548D96F1958EC421B74501A8760A74EE31ACEB03*, bool*, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(method->klass->rgctx_data, 3)))(L_6, L_7, il2cpp_rgctx_method(method->klass->rgctx_data, 3));
+		int32_t L_9 = V_0;
+		FastBufferReader_ReadBytesSafe_m109629AE2B684CFCCFF9111790DE4E1E26445649_inline((&___reader0), L_8, L_9, 0, NULL);
+		// }
+		return;
+	}
+}
+// System.Void Unity.Netcode.FixedStringSerializer`1<System.Boolean>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FixedStringSerializer_1__ctor_m83D7D798EAD22F3E72D310EA6FD0B71D499DB988_gshared (FixedStringSerializer_1_t883506FF7B946E3ABFCFDE568A27C06B21111FAD* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
 // System.Void Unity.Netcode.FixedStringSerializer`1<System.Int32>::Write(Unity.Netcode.FastBufferWriter,T&)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FixedStringSerializer_1_Write_m14FBF6FACBC10912F01C59A8B6D6006D8063F822_gshared (FixedStringSerializer_1_tB5B522D15BDC91352D08AC007B3737A953B10B73* __this, FastBufferWriter_tE6AFE9436BD125AF309056A81B70F95625FB96EC ___writer0, int32_t* ___value1, const RuntimeMethod* method) 
 {
@@ -34771,111 +34848,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ForJobStruct_1__cctor_m2ED3BF6D461EBEB11
 		intptr_t L_3;
 		L_3 = JobsUtility_CreateJobReflectionData_m17265DED7C2DBB0B2130896E2B8AC4CF5BD7FCE7(L_1, (RuntimeObject*)L_2, NULL, NULL, NULL);
 		((ForJobStruct_1_t99B16745639E9B400DE41F37194773646B52ED9C_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 6)))->___jobReflectionData_0 = L_3;
-		return;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// System.Void Unity.Jobs.IJobForExtensions/ForJobStruct`1<UnityEngine.Rendering.Universal.ZBinningJob>::Execute(T&,System.IntPtr,System.IntPtr,Unity.Jobs.LowLevel.Unsafe.JobRanges&,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ForJobStruct_1_Execute_m0B00077CDC5126D2CFA80306D1368D815185E211_gshared (ZBinningJob_t9BC217C31924E66E667568C1B51EA2F44FA0A08E* ___jobData0, intptr_t ___additionalPtr1, intptr_t ___bufferRangePatchData2, JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* ___ranges3, int32_t ___jobIndex4, const RuntimeMethod* method) 
-{
-	int32_t V_0 = 0;
-	int32_t V_1 = 0;
-	int32_t V_2 = 0;
-	bool V_3 = false;
-	int32_t V_4 = 0;
-	bool V_5 = false;
-	bool V_6 = false;
-	{
-		goto IL_0041;
-	}
-
-IL_0003:
-	{
-		JobRanges_t5A1CDFF3E0DB1197050E1E28617B517C15AF6DC3* L_0 = ___ranges3;
-		int32_t L_1 = ___jobIndex4;
-		bool L_2;
-		L_2 = JobsUtility_GetWorkStealingRange_mEFCE7247B469F69E0590111B435E0010BFB8F73A(L_0, L_1, (&V_0), (&V_1), NULL);
-		V_3 = (bool)((((int32_t)L_2) == ((int32_t)0))? 1 : 0);
-		bool L_3 = V_3;
-		if (!L_3)
-		{
-			goto IL_0019;
-		}
-	}
-	{
-		goto IL_0046;
-	}
-
-IL_0019:
-	{
-		int32_t L_4 = V_1;
-		V_2 = L_4;
-		int32_t L_5 = V_0;
-		V_4 = L_5;
-		goto IL_0035;
-	}
-
-IL_0020:
-	{
-		ZBinningJob_t9BC217C31924E66E667568C1B51EA2F44FA0A08E* L_6 = ___jobData0;
-		int32_t L_7 = V_4;
-		ZBinningJob_Execute_m71CAC2A2E6F81C9186B92492CC8D2A92EE79681A(L_6, L_7, il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 1));
-		int32_t L_8 = V_4;
-		V_4 = ((int32_t)il2cpp_codegen_add(L_8, 1));
-	}
-
-IL_0035:
-	{
-		int32_t L_9 = V_4;
-		int32_t L_10 = V_2;
-		V_5 = (bool)((((int32_t)L_9) < ((int32_t)L_10))? 1 : 0);
-		bool L_11 = V_5;
-		if (L_11)
-		{
-			goto IL_0020;
-		}
-	}
-	{
-	}
-
-IL_0041:
-	{
-		V_6 = (bool)1;
-		goto IL_0003;
-	}
-
-IL_0046:
-	{
-		return;
-	}
-}
-// System.Void Unity.Jobs.IJobForExtensions/ForJobStruct`1<UnityEngine.Rendering.Universal.ZBinningJob>::.cctor()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ForJobStruct_1__cctor_m1FE74AC093900876665C68DC25BE3AA19E0A9C98_gshared (const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Type_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_0 = { reinterpret_cast<intptr_t> (il2cpp_rgctx_type(InitializedTypeInfo(method->klass)->rgctx_data, 2)) };
-		il2cpp_codegen_runtime_class_init_inline(Type_t_il2cpp_TypeInfo_var);
-		Type_t* L_1;
-		L_1 = Type_GetTypeFromHandle_m6062B81682F79A4D6DF2640692EE6D9987858C57(L_0, NULL);
-		ExecuteJobFunction_t0AFFAB17D6E6A2A4A262214E56C7C1159F43F634* L_2 = (ExecuteJobFunction_t0AFFAB17D6E6A2A4A262214E56C7C1159F43F634*)il2cpp_codegen_object_new(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 4));
-		NullCheck(L_2);
-		((  void (*) (ExecuteJobFunction_t0AFFAB17D6E6A2A4A262214E56C7C1159F43F634*, RuntimeObject*, intptr_t, const RuntimeMethod*))il2cpp_codegen_get_method_pointer(il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 5)))(L_2, NULL, (intptr_t)((void*)il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 3)), il2cpp_rgctx_method(InitializedTypeInfo(method->klass)->rgctx_data, 5));
-		intptr_t L_3;
-		L_3 = JobsUtility_CreateJobReflectionData_m17265DED7C2DBB0B2130896E2B8AC4CF5BD7FCE7(L_1, (RuntimeObject*)L_2, NULL, NULL, NULL);
-		((ForJobStruct_1_t6E436619321F6CA11F646C1D0865C3B46ED2499F_StaticFields*)il2cpp_codegen_static_fields_for(il2cpp_rgctx_data(InitializedTypeInfo(method->klass)->rgctx_data, 6)))->___jobReflectionData_0 = L_3;
 		return;
 	}
 }

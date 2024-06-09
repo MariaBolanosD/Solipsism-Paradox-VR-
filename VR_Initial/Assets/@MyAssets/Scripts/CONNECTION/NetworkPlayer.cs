@@ -26,6 +26,8 @@ public class NetworkPlayer : NetworkBehaviour
     }
     void Update()
     {
+        return;
+
         if (!IsOwner)
             return;
 

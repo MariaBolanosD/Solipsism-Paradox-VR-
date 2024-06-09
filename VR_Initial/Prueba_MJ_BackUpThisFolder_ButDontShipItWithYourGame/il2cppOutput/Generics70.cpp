@@ -420,6 +420,8 @@ struct List_1_t70EE7982F45810D4B024CF720D910E67974A3094;
 struct ObjectPool_1_t8AC25F7642B86DC900C1E5BB4FF5DDB43900D6F4;
 // UnityEngine.UIElements.ObjectPool`1<UnityEngine.UIElements.Experimental.ValueAnimation`1<UnityEngine.UIElements.Experimental.StyleValues>>
 struct ObjectPool_1_t048E004E7532AED8FD10569876C6065B7527D2AE;
+// Unity.Netcode.UserNetworkVariableSerialization`1/ReadValueDelegate<System.Boolean>
+struct ReadValueDelegate_t6F7B349746C05240C125EAE9D57CA768633AAC7A;
 // Unity.Netcode.UserNetworkVariableSerialization`1/ReadValueDelegate<System.Int32>
 struct ReadValueDelegate_t708BCD59683B1C186066A3EF3137F0FB5A297126;
 // Unity.Netcode.UserNetworkVariableSerialization`1/ReadValueDelegate<System.Int32Enum>
@@ -458,6 +460,8 @@ struct TypedUxmlAttributeDescription_1_tF8E164DB2A1FE613654370D348F4C3680DA42A03
 struct TypedUxmlAttributeDescription_1_t5E34790227C12B474992B598302046D14D52C69E;
 // UnityEngine.UIElements.TypedUxmlAttributeDescription`1<System.String>
 struct TypedUxmlAttributeDescription_1_tD8728D2AC8F9232D2E6A83B327DC0258F2CEEFA2;
+// Unity.Netcode.UserNetworkVariableSerialization`1<System.Boolean>
+struct UserNetworkVariableSerialization_1_t1CB92E2F86E7BCD39F83CE7C44C53F5385130FFA;
 // Unity.Netcode.UserNetworkVariableSerialization`1<System.Int32>
 struct UserNetworkVariableSerialization_1_t9D8EA75C352301CF832A8E344A8F25DA57055A19;
 // Unity.Netcode.UserNetworkVariableSerialization`1<System.Int32Enum>
@@ -594,6 +598,8 @@ struct ValueCollection_t85BE239165DD7835E79A13ECE1F34AF2922A48D1;
 struct ValueCollection_tF9BCC1C418D000EF64E21430DC20F900474B0F7D;
 // System.Collections.Generic.Dictionary`2/ValueCollection<System.Object,UnityEngine.Vector2>
 struct ValueCollection_t0F3CDE51F86239622C464290CE413781AC13CA62;
+// Unity.Netcode.UserNetworkVariableSerialization`1/WriteValueDelegate<System.Boolean>
+struct WriteValueDelegate_tAB5E09C0958FE12D6017BA124FB35AEC2A0F69EE;
 // Unity.Netcode.UserNetworkVariableSerialization`1/WriteValueDelegate<System.Int32>
 struct WriteValueDelegate_t45D324B20EFBA6F5D66410BDE5FAD8FDFAC3EF21;
 // Unity.Netcode.UserNetworkVariableSerialization`1/WriteValueDelegate<System.Int32Enum>
@@ -2281,6 +2287,19 @@ struct ObjectPool_1_t048E004E7532AED8FD10569876C6065B7527D2AE  : public RuntimeO
 	Stack_1_tE1C30C6F23AA6A79A98D33CCD0ADFF9426DB116D* ___m_Stack_0;
 	// System.Int32 UnityEngine.UIElements.ObjectPool`1::m_MaxSize
 	int32_t ___m_MaxSize_1;
+};
+
+// Unity.Netcode.UserNetworkVariableSerialization`1<System.Boolean>
+struct UserNetworkVariableSerialization_1_t1CB92E2F86E7BCD39F83CE7C44C53F5385130FFA  : public RuntimeObject
+{
+};
+
+struct UserNetworkVariableSerialization_1_t1CB92E2F86E7BCD39F83CE7C44C53F5385130FFA_StaticFields
+{
+	// Unity.Netcode.UserNetworkVariableSerialization`1/WriteValueDelegate<T> Unity.Netcode.UserNetworkVariableSerialization`1::WriteValue
+	WriteValueDelegate_tAB5E09C0958FE12D6017BA124FB35AEC2A0F69EE* ___WriteValue_0;
+	// Unity.Netcode.UserNetworkVariableSerialization`1/ReadValueDelegate<T> Unity.Netcode.UserNetworkVariableSerialization`1::ReadValue
+	ReadValueDelegate_t6F7B349746C05240C125EAE9D57CA768633AAC7A* ___ReadValue_1;
 };
 
 // Unity.Netcode.UserNetworkVariableSerialization`1<System.Int32>
@@ -10117,6 +10136,22 @@ inline void Enumerator__ctor_m762A2A4014A3D3CA05A2A2E1FBC74779C23489DC (Enumerat
 {
 	((  void (*) (Enumerator_t6637E273E74F207303F5201BFE6065EAD1EF638C*, Dictionary_2_t41479D9F29C6C1BC07FC7F8D3DD313D8A9A419E1*, const RuntimeMethod*))Enumerator__ctor_m762A2A4014A3D3CA05A2A2E1FBC74779C23489DC_gshared)(__this, ___dictionary0, method);
 }
+#ifdef __clang__
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored "-Wunused-variable"
+#endif
+// System.Void Unity.Netcode.UserNetworkVariableSerialization`1<System.Boolean>::.ctor()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void UserNetworkVariableSerialization_1__ctor_m7ED462631E473FF7F292D600A85D1093F9D808FC_gshared (UserNetworkVariableSerialization_1_t1CB92E2F86E7BCD39F83CE7C44C53F5385130FFA* __this, const RuntimeMethod* method) 
+{
+	{
+		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2((RuntimeObject*)__this, NULL);
+		return;
+	}
+}
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
