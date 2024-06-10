@@ -26,8 +26,6 @@ public class Score : NetworkBehaviour
     public NetworkVariable<int> blueScore = new NetworkVariable<int>(0); // right
     public NetworkVariable<float> timer = new NetworkVariable<float>(300);
 
-    public NetworkVariable<bool> hostSpawned;
-
 
     private void Awake()
     {
@@ -36,24 +34,19 @@ public class Score : NetworkBehaviour
 
     void Start()
     {
-
-        if (IsServer)
         _renderer = GetComponent<Renderer>();
       
-
     }
 
     void FixedUpdate()
     {
         if (!IsServer)
             return;
-        redScore.Value = Red.GetComponent<ScoreUpdater>().GetScore();
-        blueScore.Value = Blue.GetComponent<ScoreUpdater>().GetScore();
-
 
         if (timer.Value >= 0)
         {
             timer.Value -= Time.deltaTime;
+            ChangeColorClientRpc();
         }
         else //time's up
         {
@@ -83,9 +76,26 @@ public class Score : NetworkBehaviour
 
     public void UpdateScore()
     {
-        RedScore = Red.GetComponent<ScoreUpdater>().GetScore();
-        BlueScore = Blue.GetComponent<ScoreUpdater>().GetScore();
+        redScore.Value = Red.GetComponent<ScoreUpdater>().GetScore();
+        blueScore.Value = Blue.GetComponent<ScoreUpdater>().GetScore();
 
+        if (redScore.Value > blueScore.Value)
+        {
+            _renderer.material = RedMat;
+        }
+        else if (redScore.Value == blueScore.Value)
+        {
+            _renderer.material = WhiteMat;
+        }
+        else
+        {
+            _renderer.material = BlueMat;
+        }
+    }
+
+    [ClientRpc]
+    public void ChangeColorClientRpc()
+    {
         if (redScore.Value > blueScore.Value)
         {
             _renderer.material = RedMat;
