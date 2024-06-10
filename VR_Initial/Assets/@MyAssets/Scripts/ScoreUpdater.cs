@@ -32,7 +32,7 @@ public class ScoreUpdater : MonoBehaviour
     public void UpdateScoreOnHit()
     {
         score += 1;
-        ScoreGO.GetComponent<ColorWinner>().UpdateScore();
+        ScoreGO.GetComponent<Score>().UpdateScore();
         TeleportInsideTaggedArea();
     }
 

@@ -168,6 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d061390aa4787448a54d6d39ab8ed68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  red_laser: {fileID: 0}
+  blue_laser: {fileID: 0}
+  player_camera: {fileID: 0}
 --- !u!1 &926329015357982081
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +324,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f13a1c1a790f97046ab6053e5ebd45eb, type: 2}
+  - {fileID: 2100000, guid: cb26f7e030d2caf42816d1e99c2b8dcb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

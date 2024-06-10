@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/@MyAssets/Scenes/FINAL_MJ/PrubaFInal.unity
     guid: 880c9f47c80796845af2739016b904b3
+  - enabled: 0
+    path: Assets/@MyAssets/Scenes/Sara.unity
+    guid: 34894ceab78b66145ad95c673ac84035
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c652e3d0b0a261b478ef27fe465ef974,
       type: 2}
