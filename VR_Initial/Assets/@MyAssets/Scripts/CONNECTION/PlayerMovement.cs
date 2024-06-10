@@ -8,6 +8,7 @@ public class PlayerMovement : NetworkBehaviour
     public static ConnectionManager connectionManager;
     public GameObject red_laser;
     public GameObject blue_laser;
+    public GameObject player_camera;
     // Update is called once per frame
     void Update()
     {
@@ -31,15 +32,18 @@ public class PlayerMovement : NetworkBehaviour
         {
             transform.position = connectionManager.startPositionHost.position;
             red_laser.SetActive(true);
+            
 
         }
         else
         {
             transform.position = connectionManager.startPositionClient.position;
-            transform.rotation = this.transform.rotation;
-            transform.localScale = this.transform.localScale;
             blue_laser.SetActive(true);
 
         }
+        if (!IsOwner) {
+            return;
+        }
+        player_camera.SetActive(true);
     }
 }

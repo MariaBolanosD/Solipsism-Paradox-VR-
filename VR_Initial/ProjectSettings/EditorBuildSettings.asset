@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/@MyAssets/Scenes/FINAL_MJ/Game.unity
     guid: d9bf36584a250d74d88ff8b399ee4bd5
-  - enabled: 1
+  - enabled: 0
     path: Assets/@MyAssets/Scenes/FINAL_MJ/GameIntento.unity
     guid: 3c23ffe68afdaf94a9f5362396ac14e4
+  - enabled: 1
+    path: Assets/@MyAssets/Scenes/FINAL_MJ/PrubaFInal.unity
+    guid: 880c9f47c80796845af2739016b904b3
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c652e3d0b0a261b478ef27fe465ef974,
       type: 2}
